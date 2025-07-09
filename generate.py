@@ -25,4 +25,4 @@ def chatbot(user_text):
 
 message = sys.argv[1]
 result = {"user": message, "system": chatbot(message)}
-print(json.dumps(result))
+print(json.dumps(result, ensure_ascii=True))
