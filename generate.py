@@ -13,7 +13,7 @@ base_path = os.path.dirname(os.path.realpath(__file__))
 if len(sys.argv) < 2:
     sys.exit(1)
 
-#model.load_weights(f"{base_path}/chatbot.weights.h5")
+model.load_weights(f"{base_path}/chatbot.weights.h5")
 
 def chatbot(user_text):
     input_ids = tokenizer.encode(f"<s><usr>{user_text}<sys>")
