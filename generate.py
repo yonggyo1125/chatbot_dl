@@ -20,7 +20,7 @@ def chatbot(user_text):
     input_ids = tf.convert_to_tensor([input_ids])
     outputs = model.generate(input_ids, max_length=100, do_sample=True, top_k=100, top_p=0.9)
     sentence = tokenizer.decode(outputs[0].numpy().tolist())
-    return sentence.split('<sys>')[1]
+    return sentence.split('<sys>')[1].replace('<pad>', '').replace('<unk>', '')
 
 
 message = sys.argv[1]
